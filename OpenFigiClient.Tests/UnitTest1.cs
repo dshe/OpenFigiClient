@@ -10,7 +10,10 @@ public class UnitTest1(ITestOutputHelper output)
     [Fact]
     public async Task Test0()
     {
-        Client openFigiClient = new();
+        Client openFigiClient = new("a7b6e1be-e55a-4354-85c3-21a7ee093b7b");
+        //Environment.GetEnvironmentVariable(FigiKey) ??
+        //throw new UnauthorizedAccessException($"Environment variable not found: {FigiKey}.");
+
         JsonArray arr = await openFigiClient.GetMappingAsync("ID_ISIN", "IE00BKM4GZ66", TestContext.Current.CancellationToken);
         foreach (JsonNode? node in arr)
         {
