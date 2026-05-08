@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="OpenFigiClient.Tests/OpenFigiClient.Tests.csproj" />
+  <Project Path="OpenFigiClient/OpenFigiClient.csproj" />
+</Solution>
