@@ -6,9 +6,9 @@ namespace OpenFigiClient;
 public class Client(string? figiKey = null)
 {
     private const string FigiKey = "X-OPENFIGI-APIKEY";
-    private readonly string FigiKeyValue = figiKey ??
-            Environment.GetEnvironmentVariable(FigiKey) ??
-            throw new UnauthorizedAccessException($"Environment variable not found: {FigiKey}.");
+    //private readonly string FigiKeyValue = figiKey ??
+    //        Environment.GetEnvironmentVariable(FigiKey) ??
+    //        throw new UnauthorizedAccessException($"Environment variable not found: {FigiKey}.");
 
     public async Task<JsonArray> GetMappingAsync(string idType, string idValue, CancellationToken ct)
     {
@@ -32,7 +32,7 @@ public class Client(string? figiKey = null)
             throw new ArgumentException("Invalid request.");
 
         using HttpClient client = new();
-        client.DefaultRequestHeaders.Add(FigiKey, FigiKeyValue);
+        //client.DefaultRequestHeaders.Add(FigiKey, FigiKeyValue);
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
         StringContent content = new(request, Encoding.UTF8, "application/json");
