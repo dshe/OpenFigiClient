@@ -5,6 +5,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  workflow_dispatch:  # enable manual runs
 
 jobs:
   build:
@@ -26,4 +27,4 @@ jobs:
       run: dotnet build OpenFigiClient.slnx --configuration Release --no-restore
 
     - name: Run tests
-      run: dotnet test OpenFigiClient.Tests/OpenFigiClient.Tests.csproj --no-build --verbosity normal
+      run: dotnet test OpenFigiClient.Tests/OpenFigiClient.Tests.csproj --no-build --verbosity diag
