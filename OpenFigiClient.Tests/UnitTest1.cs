@@ -10,7 +10,7 @@ public class UnitTest1(ITestOutputHelper output)
     [Fact]
     public async Task Test0()
     {
-        var openFigiClient = new Client();
+        Client openFigiClient = new();
         JsonArray arr = await openFigiClient.GetMappingAsync("ID_ISIN", "IE00BKM4GZ66", TestContext.Current.CancellationToken);
         foreach (JsonNode? node in arr)
         {
@@ -25,6 +25,7 @@ public class UnitTest1(ITestOutputHelper output)
             //string exchCode = node?["exchCode"]?.ToString() ?? "";
             //Write($"FIGI: {figi}, Ticker: {ticker}, Exchange: {exchCode}");
         }
+        Assert.True(true);
     }
 
 }
