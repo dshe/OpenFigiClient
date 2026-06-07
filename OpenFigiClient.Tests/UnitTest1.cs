@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Nodes;
+﻿using Xunit;
+using System.Text.Json.Nodes;
 namespace OpenFigiClient.Tests;
 
 public class UnitTest1(ITestOutputHelper output)
